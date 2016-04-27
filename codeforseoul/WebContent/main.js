@@ -3,7 +3,7 @@ function pathHover(obj) {
 	console.log("loc_name > " + loc_name);
 }
 
-/* function drawLegend(scale) {
+function drawLegend(scale) {
 	  var legend = d3.legend.color()
 	    .labelFormat(d3.format(',.0f'))
 	    .cells(9)
@@ -20,7 +20,7 @@ function pathHover(obj) {
 
 	  svg.select('.legendQuant')
 	    .call(legend);
-	}; */
+	}; 
 
 
 // start drawMap()
@@ -47,9 +47,7 @@ function drawMap() {
 
     queue()
             .defer(d3.json, "./resources/municipalities-topo-simple.json")
-            //.defer(d3.json, "./resources/kor_map_simple_topo2.json")
             .defer(d3.json, 'http://128.199.128.104:3001/nabi')
-            //.defer(d3.json, "./resources/provinces-topo-simple.json")
             .await(ready);
 
     function ready(error, kor, powerData) {
@@ -104,9 +102,10 @@ function drawMap() {
               return d.properties.usage_5min_MWh + 'MWh';
           }); 
 		
-		/* drawLegend(function(d) {
-			return quantize(values.get(d.properties.name));
-		}); */
+		drawLegend(function(d) {
+			console.log("!! > " + values.get(d.local_sub));
+			return quantize(values.get(d.local_sub));
+		});
 		
 		// svg.call(tip);
 
