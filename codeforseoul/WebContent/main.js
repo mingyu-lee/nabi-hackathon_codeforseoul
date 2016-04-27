@@ -3,7 +3,7 @@ function pathHover(obj) {
 	console.log("loc_name > " + loc_name);
 }
 
-function drawLegend(scale) {
+/*function drawLegend(scale) {
 	  var legend = d3.legend.color()
 	    .labelFormat(d3.format(',.0f'))
 	    .cells(9)
@@ -21,13 +21,13 @@ function drawLegend(scale) {
 	  svg.select('.legendQuant')
 	    .call(legend);
 	}; 
-
+*/
 
 // start drawMap()
 function drawMap() {
 	$("#map").empty();
 	var width = 840,
-        height = 900;
+        height = 860;
 
     var svg = d3.select("#map").append("svg")
             .attr("width", width)
@@ -35,7 +35,7 @@ function drawMap() {
 
     var projection = d3.geo.mercator()
             .center([128, 36])
-            .scale(8000)
+            .scale(6000)
             .translate([width/2, height/2]);
 
     var path = d3.geo.path()
@@ -47,7 +47,8 @@ function drawMap() {
 
     queue()
             .defer(d3.json, "./resources/municipalities-topo-simple.json")
-            .defer(d3.json, 'http://128.199.128.104:3001/nabi')
+            .defer(d3.json, './resources/nabi.json')
+            //.defer(d3.json, 'http://128.199.128.104:3001/nabi')
             .await(ready);
 
     function ready(error, kor, powerData) {
@@ -102,10 +103,10 @@ function drawMap() {
               return d.properties.usage_5min_MWh + 'MWh';
           }); 
 		
-		drawLegend(function(d) {
+/*		drawLegend(function(d) {
 			console.log("!! > " + values.get(d.local_sub));
 			return quantize(values.get(d.local_sub));
-		});
+		});*/
 		
 		// svg.call(tip);
 
