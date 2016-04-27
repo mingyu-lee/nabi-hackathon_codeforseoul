@@ -1,7 +1,8 @@
 /*
 	Map 요소
 */
-svg { background-color: #eee; }
+svg { background-color: rgba(35,35,35,0.7);
+ }
 svg .municipality { fill: rgb(158,202,225); }
 svg .municipality:hover { stroke: #333; }
 svg .municipality.p0 { fill: rgb(247,251,255); }
@@ -15,6 +16,10 @@ svg .municipality.p7 { fill: rgb(8,81,156); }
 svg .municipality.p8 { fill: rgb(8,48,107); }
 svg text { font-size: 10px; }
 svg title { font-size: 10px; color:  }
+
+.region-label {
+	display:none;
+}
 
 #map {
   padding-left: 2em;

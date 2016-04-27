@@ -1,6 +1,6 @@
 function pathHover(obj) {
  	var loc_name = $(obj).attr("loc_name");
-	console.log("loc_name > " + loc_name);
+ 	$('#'+loc_name).show();
 }
 
 /*function drawLegend(scale) {
@@ -47,8 +47,8 @@ function drawMap() {
 
     queue()
             .defer(d3.json, "./resources/municipalities-topo-simple.json")
-            .defer(d3.json, './resources/nabi.json')
-            //.defer(d3.json, 'http://128.199.128.104:3001/nabi')
+            //.defer(d3.json, './resources/nabi.json')
+            .defer(d3.json, 'http://128.199.128.104:3001/nabi')
             .await(ready);
 
     function ready(error, kor, powerData) {
@@ -99,8 +99,11 @@ function drawMap() {
           })
           .attr("dy", ".35em")
           .attr("class", "region-label")
+          .attr("id", function(d) {
+        	  return d.properties.name;
+          })
           .text(function(d) {
-              return d.properties.usage_5min_MWh + 'MWh';
+              return Math.ceil(d.properties.usage_5min_MWh) + 'MWh';
           }); 
 		
 /*		drawLegend(function(d) {
