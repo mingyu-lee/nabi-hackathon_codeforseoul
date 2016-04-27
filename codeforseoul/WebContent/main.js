@@ -27,7 +27,7 @@ function pathHover(obj) {
 function drawMap() {
 	$("#map").empty();
 	var width = 840,
-        height = 860;
+        height = 900;
 
     var svg = d3.select("#map").append("svg")
             .attr("width", width)
