@@ -1,7 +1,8 @@
 # 누.beam
-### Code For Seoul for Nabi Hackathon-Civic Hacking by Art Center Nabi
+### by Code For Seoul for Nabi Hackathon-Civic Hacking by Art Center Nabi
+* Visit [Code For Seoul](http://codeforseoul.org)
 
-#### 프로젝트명: 누.beam(Nu.beam)
+#### 프로젝트명: [누.beam(Nu.beam)](http://codeforseoul.cafe24.com)
 #### 프로젝트 개요
 아트센터 나비가 주최한 시빅해킹 해커톤 [Blackout city - 도시 대정전]은 테러로 인해 대정전 상황이 발생된 시나리오를 배경으로 합니다.
 대정전 상황에서는 많은 문제와 불편함이 발생하겠지만 그 중에서도 코드포서울이 주목한 것은 정보가 차단된다는 것입니다.
