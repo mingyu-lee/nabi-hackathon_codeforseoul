@@ -1,4 +1,4 @@
-# Nu.bean
+# 누.beam
 ### Code For Seoul for Nabi Hackathon-Civic Hacking by Art Center Nabi
 
 #### 프로젝트명: 누.beam(Nu.beam)
